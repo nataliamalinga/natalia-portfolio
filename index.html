@@ -3,821 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Natalia Malinga — projektowanie wnętrz</title>
-<meta name="description" content="PLACEHOLDER — opis strony pod SEO, do ustalenia w czacie o promocji.">
+<title>Natalia Malinga — Projektowanie wnętrz</title>
+<meta name="description" content="Strona w przygotowaniu. Projekty wnętrz pełne pasji i stylu — wkrótce online.">
+<meta name="robots" content="noindex, nofollow">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,600&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <style>
-:root{
-  --plaster:#EDE6D8;
-  --plaster-light:#F7F3EA;
-  --ink:#26241F;
-  --ink-soft:#4A473E;
-  --brass:#A8763E;
-  --brass-light:#C79A5F;
-  --stone:#8A8570;
-
-  --display:"Fraunces",Georgia,serif;
-  --body:"Inter",system-ui,sans-serif;
-  --mono:"IBM Plex Mono",monospace;
-
-  --gutter:clamp(1.25rem,5vw,4rem);
-  --rule:1px solid rgba(38,36,31,.15);
-}
-
-*{box-sizing:border-box;margin:0;padding:0}
-
-html{scroll-behavior:smooth}
-
-body{
-  background:var(--plaster);
-  color:var(--ink);
-  font-family:var(--body);
-  font-weight:300;
-  line-height:1.6;
-  -webkit-font-smoothing:antialiased;
-}
-
-/* ---------- elementy współdzielone ---------- */
-
-.label{
-  font-family:var(--mono);
-  font-size:.7rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--stone);
-}
-
-.section{
-  padding:clamp(4rem,10vw,8rem) var(--gutter);
-  border-top:var(--rule);
-}
-
-.section-head{
-  display:flex;
-  align-items:baseline;
-  gap:1.5rem;
-  margin-bottom:3rem;
-  flex-wrap:wrap;
-}
-
-h2{
-  font-family:var(--display);
-  font-weight:300;
-  font-size:clamp(1.75rem,4vw,2.75rem);
-  line-height:1.1;
-}
-
-a{color:inherit}
-
-:focus-visible{
-  outline:2px solid var(--brass);
-  outline-offset:3px;
-}
-
-/* ---------- nawigacja ---------- */
-
-header{
-  position:sticky;
-  top:0;
-  z-index:20;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:1rem;
-  padding:1.25rem var(--gutter);
-  background:rgba(237,230,216,.9);
-  backdrop-filter:blur(8px);
-  border-bottom:var(--rule);
-}
-
-.wordmark{
-  font-family:var(--display);
-  font-size:1.05rem;
-  letter-spacing:.02em;
-  text-decoration:none;
-}
-
-nav{display:flex;gap:1.75rem}
-
-nav a{
-  font-family:var(--mono);
-  font-size:.72rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  text-decoration:none;
-  color:var(--ink-soft);
-  transition:color .2s;
-}
-
-nav a:hover{color:var(--brass)}
-
-@media(max-width:640px){nav{display:none}}
-
-/* ---------- hero ---------- */
-
-.hero{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(2rem,5vw,4rem);
-  align-items:center;
-  padding:clamp(3rem,8vw,6rem) var(--gutter);
-  min-height:78vh;
-}
-
-@media(max-width:900px){
-  .hero{grid-template-columns:1fr;min-height:auto}
-}
-
-h1{
-  font-family:var(--display);
-  font-weight:300;
-  font-size:clamp(2.5rem,6vw,4.5rem);
-  line-height:1.02;
-  letter-spacing:-.02em;
-  margin:1.25rem 0;
-}
-
-h1 em{
-  font-style:italic;
-  color:var(--brass);
-}
-
-.hero p{
-  max-width:38ch;
-  color:var(--ink-soft);
-  font-size:1.05rem;
-  margin-bottom:2rem;
-}
-
-.cta-row{display:flex;gap:1rem;flex-wrap:wrap}
-
-.btn{
-  display:inline-block;
-  font-family:var(--mono);
-  font-size:.72rem;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  text-decoration:none;
-  padding:.85rem 1.6rem;
-  border:1px solid var(--ink);
-  background:var(--ink);
-  color:var(--plaster-light);
-  transition:background .2s,color .2s;
-  cursor:pointer;
-}
-
-.btn:hover{background:var(--brass);border-color:var(--brass)}
-
-.btn-ghost{
-  background:transparent;
-  color:var(--ink);
-}
-
-.btn-ghost:hover{background:var(--ink);color:var(--plaster-light);border-color:var(--ink)}
-
-/* ---------- rzut z wymiarowaniem (element sygnaturowy) ---------- */
-
-.plan-frame{
-  background:var(--plaster-light);
-  border:var(--rule);
-  padding:clamp(1rem,3vw,2rem);
-  position:relative;
-}
-
-.plan-frame::before{
-  content:"RZUT — PLACEHOLDER";
-  position:absolute;
-  top:.75rem;
-  left:1rem;
-  font-family:var(--mono);
-  font-size:.6rem;
-  letter-spacing:.14em;
-  color:var(--stone);
-}
-
-.plan{width:100%;height:auto;display:block}
-
-.plan .wall{
-  fill:none;
-  stroke:var(--ink);
-  stroke-width:2.5;
-  stroke-dasharray:1400;
-  stroke-dashoffset:1400;
-  animation:draw 2.4s ease forwards;
-}
-
-.plan .inner{
-  fill:none;
-  stroke:var(--ink-soft);
-  stroke-width:1.5;
-  stroke-dasharray:600;
-  stroke-dashoffset:600;
-  animation:draw 1.8s ease .6s forwards;
-}
-
-.plan .dim{
-  stroke:var(--brass);
-  stroke-width:1;
-  opacity:0;
-  animation:fade .8s ease 1.8s forwards;
-}
-
-.plan .dim-text{
-  font-family:var(--mono);
-  font-size:11px;
-  fill:var(--brass);
-  opacity:0;
-  animation:fade .8s ease 2.1s forwards;
-}
-
-.plan .room-text{
-  font-family:var(--mono);
-  font-size:10px;
-  fill:var(--stone);
-  letter-spacing:.08em;
-  opacity:0;
-  animation:fade .8s ease 2.3s forwards;
-}
-
-@keyframes draw{to{stroke-dashoffset:0}}
-@keyframes fade{to{opacity:1}}
-
-@media(prefers-reduced-motion:reduce){
-  .plan .wall,.plan .inner{stroke-dashoffset:0;animation:none}
-  .plan .dim,.plan .dim-text,.plan .room-text{opacity:1;animation:none}
-  html{scroll-behavior:auto}
-}
-
-/* ---------- o mnie ---------- */
-
-.about{
-  display:grid;
-  grid-template-columns:minmax(0,340px) 1fr;
-  gap:clamp(2rem,5vw,4rem);
-  align-items:start;
-}
-
-@media(max-width:800px){.about{grid-template-columns:1fr}}
-
-.portrait{
-  aspect-ratio:3/4;
-  background:var(--plaster-light);
-  border:var(--rule);
-  display:grid;
-  place-items:center;
-  font-family:var(--mono);
-  font-size:.7rem;
-  letter-spacing:.1em;
-  color:var(--stone);
-  text-align:center;
-  padding:1rem;
-}
-
-.about-body p{
-  max-width:60ch;
-  margin-bottom:1.25rem;
-  color:var(--ink-soft);
-}
-
-.stats{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:1.5rem;
-  margin-top:2.5rem;
-  padding-top:2rem;
-  border-top:var(--rule);
-}
-
-.stat-value{
-  font-family:var(--display);
-  font-size:2.25rem;
-  font-weight:300;
-  line-height:1;
-  color:var(--brass);
-}
-
-.stat-label{
-  font-family:var(--mono);
-  font-size:.66rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--stone);
-  margin-top:.5rem;
-}
-
-/* ---------- filtry ---------- */
-
-.filters{
-  display:flex;
-  gap:.5rem;
-  flex-wrap:wrap;
-  margin-left:auto;
-}
-
-.filter{
-  font-family:var(--mono);
-  font-size:.68rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  padding:.5rem 1rem;
-  border:1px solid rgba(38,36,31,.2);
-  background:transparent;
-  color:var(--ink-soft);
-  cursor:pointer;
-  transition:all .2s;
-}
-
-.filter:hover{border-color:var(--brass);color:var(--brass)}
-
-.filter[aria-pressed="true"]{
-  background:var(--ink);
-  border-color:var(--ink);
-  color:var(--plaster-light);
-}
-
-/* ---------- siatka projektów ---------- */
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:1.5rem;
-}
-
-.card{
-  position:relative;
-  overflow:hidden;
-  border:var(--rule);
-  background:var(--plaster-light);
-  cursor:pointer;
-  transition:opacity .3s,transform .3s;
-}
-
-.card[hidden]{display:none}
-
-.card-image{
-  aspect-ratio:4/3;
-  display:grid;
-  place-items:center;
-  font-family:var(--mono);
-  font-size:.68rem;
-  letter-spacing:.1em;
-  color:var(--stone);
-  background:
-    repeating-linear-gradient(45deg,
-      transparent,transparent 12px,
-      rgba(138,133,112,.07) 12px,
-      rgba(138,133,112,.07) 24px);
-}
-
-.card-body{
-  padding:1.25rem;
-  border-top:var(--rule);
-  display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  gap:1rem;
-}
-
-.card-title{
-  font-family:var(--display);
-  font-size:1.15rem;
-  font-weight:400;
-}
-
-/* spec sheet — wyjeżdża po najechaniu */
-
-.spec{
-  position:absolute;
-  inset:auto 0 0 0;
-  background:var(--ink);
-  color:var(--plaster-light);
-  padding:1.5rem;
-  transform:translateY(100%);
-  transition:transform .35s cubic-bezier(.4,0,.2,1);
-}
-
-.card:hover .spec,
-.card:focus-within .spec{transform:translateY(0)}
-
-.spec dl{
-  display:grid;
-  grid-template-columns:auto 1fr;
-  gap:.5rem 1.25rem;
-  font-family:var(--mono);
-  font-size:.72rem;
-}
-
-.spec dt{color:var(--brass-light);letter-spacing:.08em}
-.spec dd{color:var(--plaster-light)}
-
-/* ---------- proces ---------- */
-
-.steps{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:2.5rem;
-}
-
-.step{
-  padding-top:1.5rem;
-  border-top:2px solid var(--brass);
-}
-
-.step-num{
-  font-family:var(--mono);
-  font-size:.7rem;
-  letter-spacing:.14em;
-  color:var(--brass);
-}
-
-.step h3{
-  font-family:var(--display);
-  font-weight:400;
-  font-size:1.4rem;
-  margin:.75rem 0;
-}
-
-.step p{color:var(--ink-soft);font-size:.95rem}
-
-/* ---------- kontakt ---------- */
-
-.contact{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:clamp(2rem,5vw,4rem);
-}
-
-@media(max-width:800px){.contact{grid-template-columns:1fr}}
-
-.contact-list{list-style:none;margin-top:2rem}
-
-.contact-list li{
-  padding:1rem 0;
-  border-bottom:var(--rule);
-}
-
-.contact-list a{
-  text-decoration:none;
-  font-size:1.05rem;
-  transition:color .2s;
-}
-
-.contact-list a:hover{color:var(--brass)}
-
-form{display:grid;gap:1.25rem}
-
-.field{display:grid;gap:.4rem}
-
-label{
-  font-family:var(--mono);
-  font-size:.68rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--stone);
-}
-
-input,textarea{
-  font-family:var(--body);
-  font-size:.95rem;
-  color:var(--ink);
-  background:var(--plaster-light);
-  border:1px solid rgba(38,36,31,.2);
-  padding:.8rem;
-  width:100%;
-}
-
-input:focus,textarea:focus{
-  outline:none;
-  border-color:var(--brass);
-}
-
-textarea{resize:vertical;min-height:120px}
-
-/* ---------- stopka ---------- */
-
-footer{
-  padding:2rem var(--gutter);
-  border-top:var(--rule);
-  display:flex;
-  justify-content:space-between;
-  gap:1rem;
-  flex-wrap:wrap;
-}
+  :root {
+    --plaster: #EDE6D8;
+    --plaster-light: #F7F3EA;
+    --ink: #26241F;
+    --ink-soft: #4A473E;
+    --brass: #A8763E;
+    --brass-light: #C79A5F;
+    --stone: #8A8570;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background-color: var(--plaster);
+  }
+
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/hero-bg.webp');
+    background-size: cover;
+    background-position: center 35%;
+  }
+
+  /* Delikatna nakładka w tonie plastra, żeby tekst miał kontrast niezależnie od jasności zdjęcia */
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      180deg,
+      rgba(247, 243, 234, 0.35) 0%,
+      rgba(247, 243, 234, 0.15) 30%,
+      rgba(237, 230, 216, 0.55) 100%
+    );
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem 1.5rem;
+    max-width: 44rem;
+  }
+
+  .hero__name {
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    letter-spacing: 0.01em;
+    margin: 0 0 0.75rem;
+    color: var(--ink);
+    text-shadow: 0 2px 24px rgba(247, 243, 234, 0.6);
+  }
+
+  .hero__tagline {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-size: clamp(1.1rem, 2.6vw, 1.5rem);
+    color: var(--ink-soft);
+    margin: 0 0 3rem;
+    text-shadow: 0 2px 20px rgba(247, 243, 234, 0.6);
+  }
+
+  .hero__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-family: 'IBM Plex Mono', 'Inter', monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    background: rgba(247, 243, 234, 0.75);
+    border: 1px solid rgba(38, 36, 31, 0.15);
+    padding: 0.7rem 1.4rem;
+    border-radius: 2px;
+    backdrop-filter: blur(2px);
+  }
+
+  .hero__status::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--brass);
+    flex-shrink: 0;
+  }
+
+  .hero__footer {
+    position: absolute;
+    bottom: 2rem;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--ink-soft);
+    letter-spacing: 0.03em;
+    text-shadow: 0 1px 12px rgba(247, 243, 234, 0.7);
+  }
+
+  .hero__footer a {
+    color: var(--brass);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .hero__footer a:hover,
+  .hero__footer a:focus-visible {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 480px) {
+    .hero__bg {
+      background-position: 30% center;
+    }
+    .hero__status {
+      font-size: 0.7rem;
+      padding: 0.6rem 1rem;
+    }
+    .hero__footer {
+      bottom: 1.25rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { scroll-behavior: auto !important; }
+  }
 </style>
 </head>
 <body>
 
-<header>
-  <a href="#" class="wordmark">Natalia Malinga</a>
-  <nav>
-    <a href="#projekty">Realizacje</a>
-    <a href="#o-mnie">O mnie</a>
-    <a href="#proces">Jak pracuję</a>
-    <a href="#kontakt">Kontakt</a>
-  </nav>
-</header>
+<div class="hero">
+  <div class="hero__bg"></div>
+  <div class="hero__overlay"></div>
 
-<!-- ===================== HERO ===================== -->
-<section class="hero">
-  <div>
-    <span class="label">Projektowanie wnętrz — PLACEHOLDER: miasto / obszar działania</span>
-    <h1>Wnętrza policzone<br>co do <em>centymetra</em></h1>
-    <p>PLACEHOLDER — dwa zdania o tym, czym różni się projekt z pełnym wymiarowaniem
-       i specyfikacją mebli od samej wizualizacji. Do napisania razem z Natalią.</p>
-    <div class="cta-row">
-      <a href="#projekty" class="btn">Zobacz realizacje</a>
-      <a href="#kontakt" class="btn btn-ghost">Umów konsultację</a>
-    </div>
+  <div class="hero__content">
+    <h1 class="hero__name">Natalia Malinga</h1>
+    <p class="hero__tagline">Projekty pełne pasji i stylu</p>
+    <span class="hero__status">Strona w budowie</span>
   </div>
 
-  <div class="plan-frame">
-    <svg class="plan" viewBox="0 0 420 320" role="img"
-         aria-label="Rzut pomieszczenia z liniami wymiarowymi — grafika poglądowa">
-      <!-- ściany zewnętrzne -->
-      <rect class="wall" x="60" y="60" width="300" height="200"/>
-      <!-- ścianka działowa i zabudowa -->
-      <path class="inner" d="M240 60 L240 180 L360 180"/>
-      <path class="inner" d="M60 180 L150 180 L150 260"/>
-      <rect class="inner" x="75" y="75" width="55" height="22"/>
-
-      <!-- wymiarowanie poziome -->
-      <line class="dim" x1="60" y1="40" x2="360" y2="40"/>
-      <line class="dim" x1="60" y1="34" x2="60" y2="46"/>
-      <line class="dim" x1="360" y1="34" x2="360" y2="46"/>
-      <text class="dim-text" x="196" y="30" text-anchor="middle">620 cm</text>
-
-      <!-- wymiarowanie pionowe -->
-      <line class="dim" x1="385" y1="60" x2="385" y2="260"/>
-      <line class="dim" x1="379" y1="60" x2="391" y2="60"/>
-      <line class="dim" x1="379" y1="260" x2="391" y2="260"/>
-      <text class="dim-text" x="400" y="165" text-anchor="middle"
-            transform="rotate(90 400 165)">410 cm</text>
-
-      <!-- opisy pomieszczeń -->
-      <text class="room-text" x="150" y="130" text-anchor="middle">SALON</text>
-      <text class="room-text" x="300" y="125" text-anchor="middle">KUCHNIA</text>
-      <text class="room-text" x="105" y="225" text-anchor="middle">HOL</text>
-    </svg>
+  <div class="hero__footer">
+    © 2026 Natalia Malinga · <a href="mailto:natalia.malinga@gmail.com">natalia.malinga@gmail.com</a>
   </div>
-</section>
-
-<!-- ===================== O MNIE ===================== -->
-<section class="section" id="o-mnie">
-  <div class="section-head">
-    <span class="label">01 — O mnie</span>
-    <h2>Projektuję tak,<br>żeby dało się to wykonać</h2>
-  </div>
-
-  <div class="about">
-    <div class="portrait">PLACEHOLDER<br>portret 3:4</div>
-    <div class="about-body">
-      <p>PLACEHOLDER — akapit pierwszy. Kim jest Natalia, skąd wzięło się
-         projektowanie wnętrz, co ją w tym trzyma.</p>
-      <p>PLACEHOLDER — akapit drugi. Podejście do pracy: pomiar na miejscu,
-         dokumentacja dla ekipy, konkretne modele mebli zamiast nastrojowych kolaży.</p>
-
-      <div class="stats">
-        <div>
-          <div class="stat-value">00</div>
-          <div class="stat-label">PLACEHOLDER — zrealizowanych wnętrz</div>
-        </div>
-        <div>
-          <div class="stat-value">0000</div>
-          <div class="stat-label">PLACEHOLDER — m² w projektach</div>
-        </div>
-        <div>
-          <div class="stat-value">0</div>
-          <div class="stat-label">PLACEHOLDER — lat doświadczenia</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== PROJEKTY ===================== -->
-<section class="section" id="projekty">
-  <div class="section-head">
-    <span class="label">02 — Realizacje</span>
-    <h2>Wybrane projekty</h2>
-    <div class="filters" role="group" aria-label="Filtruj po kategorii">
-      <button class="filter" data-filter="all" aria-pressed="true">Wszystkie</button>
-      <button class="filter" data-filter="salon" aria-pressed="false">Salon</button>
-      <button class="filter" data-filter="kuchnia" aria-pressed="false">Kuchnia</button>
-      <button class="filter" data-filter="lazienka" aria-pressed="false">Łazienka</button>
-      <button class="filter" data-filter="mieszkanie" aria-pressed="false">Całe mieszkanie</button>
-    </div>
-  </div>
-
-  <div class="grid" id="grid">
-    <!-- PLACEHOLDER — docelowo generowane z projects/<nazwa>/data.json -->
-
-    <article class="card" data-category="mieszkanie" tabindex="0">
-      <div class="card-image">PLACEHOLDER — zdjęcie 4:3</div>
-      <div class="card-body">
-        <span class="card-title">Mieszkanie na Woli</span>
-        <span class="label">54 m²</span>
-      </div>
-      <div class="spec">
-        <dl>
-          <dt>Metraż</dt><dd>PLACEHOLDER</dd>
-          <dt>Styl</dt><dd>PLACEHOLDER</dd>
-          <dt>Meble</dt><dd>PLACEHOLDER</dd>
-          <dt>Materiały</dt><dd>PLACEHOLDER</dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="card" data-category="kuchnia" tabindex="0">
-      <div class="card-image">PLACEHOLDER — zdjęcie 4:3</div>
-      <div class="card-body">
-        <span class="card-title">Kuchnia z wyspą</span>
-        <span class="label">18 m²</span>
-      </div>
-      <div class="spec">
-        <dl>
-          <dt>Metraż</dt><dd>PLACEHOLDER</dd>
-          <dt>Styl</dt><dd>PLACEHOLDER</dd>
-          <dt>Meble</dt><dd>PLACEHOLDER</dd>
-          <dt>Materiały</dt><dd>PLACEHOLDER</dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="card" data-category="salon" tabindex="0">
-      <div class="card-image">PLACEHOLDER — zdjęcie 4:3</div>
-      <div class="card-body">
-        <span class="card-title">Salon z kominkiem</span>
-        <span class="label">32 m²</span>
-      </div>
-      <div class="spec">
-        <dl>
-          <dt>Metraż</dt><dd>PLACEHOLDER</dd>
-          <dt>Styl</dt><dd>PLACEHOLDER</dd>
-          <dt>Meble</dt><dd>PLACEHOLDER</dd>
-          <dt>Materiały</dt><dd>PLACEHOLDER</dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="card" data-category="lazienka" tabindex="0">
-      <div class="card-image">PLACEHOLDER — zdjęcie 4:3</div>
-      <div class="card-body">
-        <span class="card-title">Łazienka w mikrocemencie</span>
-        <span class="label">7 m²</span>
-      </div>
-      <div class="spec">
-        <dl>
-          <dt>Metraż</dt><dd>PLACEHOLDER</dd>
-          <dt>Styl</dt><dd>PLACEHOLDER</dd>
-          <dt>Meble</dt><dd>PLACEHOLDER</dd>
-          <dt>Materiały</dt><dd>PLACEHOLDER</dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="card" data-category="mieszkanie" tabindex="0">
-      <div class="card-image">PLACEHOLDER — zdjęcie 4:3</div>
-      <div class="card-body">
-        <span class="card-title">Kawalerka pod wynajem</span>
-        <span class="label">28 m²</span>
-      </div>
-      <div class="spec">
-        <dl>
-          <dt>Metraż</dt><dd>PLACEHOLDER</dd>
-          <dt>Styl</dt><dd>PLACEHOLDER</dd>
-          <dt>Meble</dt><dd>PLACEHOLDER</dd>
-          <dt>Materiały</dt><dd>PLACEHOLDER</dd>
-        </dl>
-      </div>
-    </article>
-
-    <article class="card" data-category="salon" tabindex="0">
-      <div class="card-image">PLACEHOLDER — zdjęcie 4:3</div>
-      <div class="card-body">
-        <span class="card-title">Strefa dzienna, dom</span>
-        <span class="label">45 m²</span>
-      </div>
-      <div class="spec">
-        <dl>
-          <dt>Metraż</dt><dd>PLACEHOLDER</dd>
-          <dt>Styl</dt><dd>PLACEHOLDER</dd>
-          <dt>Meble</dt><dd>PLACEHOLDER</dd>
-          <dt>Materiały</dt><dd>PLACEHOLDER</dd>
-        </dl>
-      </div>
-    </article>
-  </div>
-</section>
-
-<!-- ===================== PROCES ===================== -->
-<section class="section" id="proces">
-  <div class="section-head">
-    <span class="label">03 — Jak pracuję</span>
-    <h2>Trzy etapy, bez niespodzianek</h2>
-  </div>
-
-  <div class="steps">
-    <div class="step">
-      <span class="step-num">ETAP 01</span>
-      <h3>Pomiar i konsultacja</h3>
-      <p>PLACEHOLDER — co się dzieje na pierwszym spotkaniu, co Natalia mierzy,
-         o co pyta, ile to trwa.</p>
-    </div>
-    <div class="step">
-      <span class="step-num">ETAP 02</span>
-      <h3>Projekt i wizualizacja</h3>
-      <p>PLACEHOLDER — co klient dostaje, ile rund poprawek jest w cenie.
-         Do domknięcia w czacie o ofercie.</p>
-    </div>
-    <div class="step">
-      <span class="step-num">ETAP 03</span>
-      <h3>Materiały dla wykonawców</h3>
-      <p>PLACEHOLDER — rzuty, zestawienia mebli, specyfikacje. Co dokładnie
-         trafia do ekipy remontowej.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ===================== KONTAKT ===================== -->
-<section class="section" id="kontakt">
-  <div class="section-head">
-    <span class="label">04 — Kontakt</span>
-    <h2>Porozmawiajmy<br>o Twoim wnętrzu</h2>
-  </div>
-
-  <div class="contact">
-    <div>
-      <p style="max-width:42ch;color:var(--ink-soft)">
-        PLACEHOLDER — jedno zdanie o tym, co się dzieje po wysłaniu wiadomości
-        i w jakim czasie Natalia odpowiada.
-      </p>
-      <ul class="contact-list">
-        <li>
-          <div class="label">E-mail</div>
-          <a href="mailto:PLACEHOLDER">PLACEHOLDER — adres e-mail</a>
-        </li>
-        <li>
-          <div class="label">Telefon</div>
-          <a href="tel:PLACEHOLDER">PLACEHOLDER — numer telefonu</a>
-        </li>
-        <li>
-          <div class="label">Instagram</div>
-          <a href="#">PLACEHOLDER — @nazwa</a>
-        </li>
-        <li>
-          <div class="label">Obszar działania</div>
-          <span>PLACEHOLDER — miasto i okolice</span>
-        </li>
-      </ul>
-    </div>
-
-    <!-- PLACEHOLDER: podmienić action na endpoint z Formspree -->
-    <form action="https://formspree.io/f/PLACEHOLDER_ID" method="POST">
-      <div class="field">
-        <label for="name">Imię i nazwisko</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="field">
-        <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="field">
-        <label for="area">Metraż i rodzaj wnętrza</label>
-        <input type="text" id="area" name="area" placeholder="np. mieszkanie 54 m², cały remont">
-      </div>
-      <div class="field">
-        <label for="message">Wiadomość</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-      <button type="submit" class="btn">Wyślij wiadomość</button>
-    </form>
-  </div>
-</section>
-
-<footer>
-  <span class="label">© <span id="year"></span> Natalia Malinga</span>
-  <span class="label">nataliamalinga.pl</span>
-</footer>
-
-<script>
-// filtrowanie projektów po kategorii
-const filters = document.querySelectorAll('.filter');
-const cards = document.querySelectorAll('.card');
-
-filters.forEach(btn => {
-  btn.addEventListener('click', () => {
-    const value = btn.dataset.filter;
-    filters.forEach(f => f.setAttribute('aria-pressed', f === btn));
-    cards.forEach(card => {
-      card.hidden = value !== 'all' && card.dataset.category !== value;
-    });
-  });
-});
-
-document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+</div>
 
 </body>
 </html>
